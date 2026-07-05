@@ -1,0 +1,121 @@
+/* ========================================
+   Experience / Timeline
+   ======================================== */
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), var(--accent-cyan), transparent);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 0 var(--space-2xl) var(--space-2xl);
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+    padding-right: var(--space-2xl);
+    padding-left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+    padding-left: var(--space-2xl);
+    padding-right: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 3px solid var(--bg-primary);
+    box-shadow: 0 0 20px var(--primary-glow);
+    z-index: 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -8px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -8px;
+}
+
+.timeline-content {
+    background: var(--bg-glass);
+    backdrop-filter: var(--glass-blur);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: var(--space-xl);
+    transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.timeline-content:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+}
+
+.timeline-date {
+    font-family: var(--font-accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    letter-spacing: 0.05em;
+}
+
+.timeline-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: var(--space-sm) 0;
+}
+
+.timeline-company {
+    font-size: 0.9rem;
+    color: var(--accent-cyan);
+    margin-bottom: var(--space-sm);
+}
+
+.timeline-content p:last-child {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .timeline::before { left: 20px; }
+    .timeline-item,
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding-left: var(--space-3xl);
+        padding-right: 0;
+    }
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 12px;
+        right: auto;
+    }
+}

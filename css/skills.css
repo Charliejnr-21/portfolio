@@ -1,0 +1,98 @@
+/* ========================================
+   Skills Section
+   ======================================== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl);
+}
+
+.skills-category {
+    background: var(--bg-glass);
+    backdrop-filter: var(--glass-blur);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+    padding: var(--space-2xl);
+}
+
+.skills-category-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--border);
+}
+
+.skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.skill-bar-item {
+    display: grid;
+    grid-template-columns: 140px 1fr 50px;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.skill-name {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.skill-bar {
+    height: 8px;
+    background: var(--accent-glass-white);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--accent-cyan));
+    border-radius: var(--radius-full);
+    width: 0%;
+    transition: width 1.5s var(--ease-smooth);
+}
+
+.skill-percent {
+    font-family: var(--font-accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    text-align: right;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.skill-tag {
+    padding: var(--space-sm) var(--space-md);
+    background: var(--primary-subtle);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--primary-light);
+    transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.skill-tag:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    .skill-bar-item { grid-template-columns: 100px 1fr 45px; }
+}
