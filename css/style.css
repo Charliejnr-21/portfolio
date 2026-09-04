@@ -1,6 +1,6 @@
 /* ============================================================
-   INFINITY DESIGNS — Editorial Portfolio Stylesheet
-   Sunday Elijah Charles — Creative Designer & MS Office Specialist
+   ORIVON — Editorial Portfolio Stylesheet
+   Orivon — Elijah Sunday, Creative Lead
    ------------------------------------------------------------
    Design language: clean editorial canvas, confident typography,
    hairline structure, one accent, subtle motion.
@@ -178,25 +178,17 @@ sup { font-size: 0.62em; }
     flex-shrink: 0;
 }
 .brand-mark {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: var(--accent);
-    line-height: 1;
-    transform: translateY(1px);
+    display: block;
+    height: 28px;
+    width: 28px;
+    transition: height var(--t-med) var(--ease);
 }
+.site-header.is-scrolled .brand-mark { height: 23px; }
 .brand-name {
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: -0.015em;
-}
-.brand-sub {
-    font-family: var(--font-mono);
-    font-size: 0.5625rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-3);
+    font-weight: 800;
+    font-size: 1.0625rem;
+    letter-spacing: 0.02em;
 }
 
 .main-nav {
@@ -823,12 +815,9 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 }
 .philosophy-mark {
     display: block;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.6rem;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 0.6rem;
+    height: 32px;
+    width: 32px;
+    margin-bottom: 0.9rem;
 }
 .philosophy p {
     font-family: var(--font-serif);
@@ -1128,11 +1117,9 @@ a.contact-v:hover { color: var(--accent); }
 }
 .footer-brand { display: flex; align-items: center; gap: 1rem; }
 .footer-mark {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.9rem;
-    color: var(--accent);
-    line-height: 1;
+    display: block;
+    height: 38px;
+    width: 38px;
 }
 .footer-name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; letter-spacing: -0.01em; }
 .footer-tag { font-size: 0.8rem; color: var(--ink-3); }
@@ -1335,7 +1322,6 @@ a.contact-v:hover { color: var(--accent); }
 @media (max-width: 900px) {
     .nav-toggle { display: flex; }
     .header-actions .btn { display: none; }
-    .brand-sub { display: none; }
     .brand, .header-actions { position: relative; z-index: 3; }
     body.nav-open { overflow: hidden; }
 

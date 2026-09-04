@@ -1,6 +1,6 @@
 /* ============================================================
-   INFINITY DESIGNS — Portfolio Data
-   Sunday Elijah Charles — Creative Designer & MS Office Specialist
+   ORIVON — Portfolio Data
+   Orivon — Elijah Sunday, Creative Lead
    ============================================================ */
 
 const DESIGN_WORK = [
@@ -740,7 +740,7 @@ const GALLERY_DETAILS = {
         palette: 'Spring Green, Soft Blue, White',
         typography: 'Cormorant, Inter',
         challenges: 'Creating a unique identity for each month while maintaining brand coherence.',
-        solution: 'Used spring-themed color palettes with clean typography and the consistent Infinity Designs visual signature.'
+        solution: 'Used spring-themed color palettes with clean typography and the consistent Orivon visual signature.'
     },
     'designz': {
         title: 'Promotional Design',

@@ -1,8 +1,8 @@
-# ∞ Infinity Designs — Portfolio
+# ORIVON — Portfolio
 
-> **Where Ideas Expand Beyond Limits**
+> **From vision.** — *Orí* (Yoruba): inner vision, destiny.
 
-The personal portfolio of **Sunday Elijah Charles** — Creative Designer & Microsoft Office Specialist based in Akwa Ibom, Nigeria.
+The studio portfolio of **Elijah Sunday — Creative Lead at Orivon**. Brand identity · Art direction · Campaign design, plus business documents, dashboards and presentations. Based in Akwa Ibom, Nigeria — working worldwide.
 
 **[View Portfolio →](https://charliejnr-21.github.io/portfolio)**
 
@@ -51,6 +51,8 @@ portfolio/
     └── documents/      # Word / Excel / PowerPoint files, resumes, CV
 ```
 
+**Brand assets** live in `assets/brand/` (mark, favicons). The orbit-O mark is an interim stand-in — client-supplied `logo.png` / `ORIVON WORDMARK.png` / `FAV ICON.png` slot in directly when supplied.
+
 **Sections:** Hero → Selected Work → The Office Studio → Services → About (+ Experience + Resume kit) → Testimonials → Contact
 
 ## 🛠 Tech
@@ -73,14 +75,14 @@ python3 -m http.server 8000
 
 ## 👤 Author
 
-**Sunday Elijah Charles**
+**Elijah Sunday** — Creative Lead, Orivon
 - 📧 charliejnr38@gmail.com
 - 🐙 [GitHub](https://github.com/Charliejnr-21)
 - 📸 [Instagram](https://instagram.com/charliejnr38)
-- 🏷️ **Infinity Designs** — Where Ideas Expand Beyond Limits
+- 🏷️ **Orivon** — Brand Identity · Art Direction · Campaign Design
 
 ---
 
 ## 📄 License
 
-© 2026 Sunday Elijah Charles — Infinity Designs. All rights reserved.
+© 2026 Orivon — Elijah Sunday. All rights reserved.

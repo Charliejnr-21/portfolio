@@ -1,6 +1,6 @@
 /* ============================================================
-   INFINITY DESIGNS — Portfolio App
-   Sunday Elijah Charles — Creative Designer & MS Office Specialist
+   ORIVON — Portfolio App
+   Orivon — Elijah Sunday, Creative Lead
    ============================================================ */
 (function () {
     'use strict';
@@ -13,6 +13,7 @@
     }[c]));
 
     const MAILTO = 'charliejnr38@gmail.com';
+    const BRAND = 'Orivon';
 
     /* ============ Header ============ */
     const header = $('#siteHeader');
@@ -271,7 +272,7 @@
                 ${modalSection('Challenge', det.challenges)}
                 ${modalSection('Solution', det.solution)}
                 <div class="modal-actions">
-                    <a class="btn btn-accent" href="mailto:${MAILTO}?subject=${encodeURIComponent('Project enquiry — similar to ' + (det.title || d.title))}">Commission something similar
+                    <a class="btn btn-accent" href="mailto:${MAILTO}?subject=${encodeURIComponent('New project — ' + (det.title || d.title) + ' × ' + BRAND)}">Commission something similar
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13 13 3M5.5 3H13v7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
                 </div>
@@ -309,7 +310,7 @@
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0 3.5-3.5M8 10 4.5 6.5M2.5 13.5h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         ${fileLabel}
                     </a>
-                    <a class="btn btn-ghost" href="mailto:${MAILTO}?subject=${encodeURIComponent('Project enquiry — similar to ' + p.title)}">Ask about a similar project</a>
+                    <a class="btn btn-ghost" href="mailto:${MAILTO}?subject=${encodeURIComponent('New project — ' + p.title + ' × ' + BRAND)}">Ask about a similar project</a>
                 </div>
             </div>`;
     }
@@ -355,7 +356,7 @@
             e.preventDefault();
             if (!form.reportValidity()) return;
             const data = new FormData(form);
-            const subject = `Project enquiry — ${data.get('service')} (via portfolio)`;
+            const subject = `New project — ${data.get('service')} × ${BRAND}`;
             const body = [
                 `Name: ${data.get('name')}`,
                 `Email: ${data.get('email')}`,
