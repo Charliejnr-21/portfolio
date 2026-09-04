@@ -4,12 +4,14 @@
    ============================================================ */
 
 const DESIGN_WORK = [
-    {"id": "eve-wig", "cat": "beauty", "category": "Beauty & Fashion", "year": "2025", "img": "assets/images/Eve Wig Flyer.png", "alt": "Eve Wig Flyer", "title": "Eve Wig Collection"},
     {"id": "millicent", "cat": "beauty", "category": "Beauty & Fashion", "year": "2025", "img": "assets/images/Millicent Elegance and Charm.png", "alt": "Millicent Elegance", "title": "Millicent Elegance & Charm"},
-    {"id": "thanksgiving", "cat": "church", "category": "Faith & Church", "year": "2026", "img": "assets/images/Thanksgiving Service May.png", "alt": "Thanksgiving Service", "title": "Thanksgiving Service"},
-    {"id": "worship", "cat": "church", "category": "Faith & Church", "year": "2026", "img": "assets/images/Worship Experience.png", "alt": "Worship Experience", "title": "Worship Experience"},
-    {"id": "marissa", "cat": "food", "category": "Food & Hospitality", "year": "2025", "img": "assets/images/Marissa's Kitchen 2.png", "alt": "Marissa's Kitchen", "title": "Marissa's Kitchen"},
+    {"id": "eve-wig", "cat": "beauty", "category": "Beauty & Fashion", "year": "2025", "img": "assets/images/Eve Wig Flyer.png", "alt": "Eve Wig Flyer", "title": "Eve Wig Collection"},
     {"id": "hotel", "cat": "food", "category": "Food & Hospitality", "year": "2025", "img": "assets/images/Hotel Design.png", "alt": "Hotel Design", "title": "Big John Hotel"},
+    {"id": "worship", "cat": "church", "category": "Faith & Church", "year": "2026", "img": "assets/images/Worship Experience.png", "alt": "Worship Experience", "title": "Worship Experience"},
+    {"id": "october", "cat": "social", "category": "Social Media", "year": "2024", "img": "assets/images/OCTOBER DESIGN.jpg", "alt": "October Design", "title": "October Monthly Design"},
+    {"id": "designz", "cat": "social", "category": "Social Media", "year": "2025", "img": "assets/images/DESIGNZ 1.jpg", "alt": "Designz", "title": "Promotional Design"},
+    {"id": "thanksgiving", "cat": "church", "category": "Faith & Church", "year": "2026", "img": "assets/images/Thanksgiving Service May.png", "alt": "Thanksgiving Service", "title": "Thanksgiving Service"},
+    {"id": "marissa", "cat": "food", "category": "Food & Hospitality", "year": "2025", "img": "assets/images/Marissa's Kitchen 2.png", "alt": "Marissa's Kitchen", "title": "Marissa's Kitchen"},
     {"id": "auditions", "cat": "event", "category": "Events", "year": "2026", "img": "assets/images/Call fo Auditions.png", "alt": "Call for Auditions", "title": "Call for Auditions"},
     {"id": "dog-detectives", "cat": "event", "category": "Events", "year": "2025", "img": "assets/images/Dog Detectives.png", "alt": "Dog Detectives", "title": "Dog Detectives"},
     {"id": "album", "cat": "entertainment", "category": "Entertainment", "year": "2025", "img": "assets/images/Album Back 1.png", "alt": "Album Cover", "title": "Music Album Cover"},
@@ -17,9 +19,7 @@ const DESIGN_WORK = [
     {"id": "teh-ry", "cat": "social", "category": "Social Media", "year": "2025", "img": "assets/images/Teh_Ry birthday 2.png", "alt": "Birthday Design", "title": "Teh_Ry Birthday"},
     {"id": "birthday-id", "cat": "social", "category": "Social Media", "year": "2026", "img": "assets/images/Birthday Design ID.png", "alt": "Birthday Design", "title": "Birthday Celebration"},
     {"id": "happy-weekend", "cat": "social", "category": "Social Media", "year": "2025", "img": "assets/images/Happy Weekend.png", "alt": "Happy Weekend", "title": "Happy Weekend"},
-    {"id": "october", "cat": "social", "category": "Social Media", "year": "2024", "img": "assets/images/OCTOBER DESIGN.jpg", "alt": "October Design", "title": "October Monthly Design"},
     {"id": "april", "cat": "social", "category": "Social Media", "year": "2025", "img": "assets/images/Month of April.png", "alt": "Month of April", "title": "Month of April"},
-    {"id": "designz", "cat": "social", "category": "Social Media", "year": "2025", "img": "assets/images/DESIGNZ 1.jpg", "alt": "Designz", "title": "Promotional Design"},
 ];
 
 const WORD_PROJECTS = [

@@ -271,7 +271,7 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
    HERO
    ============================================================ */
 .hero {
-    padding: clamp(4.5rem, 10vw, 9rem) 0 clamp(3.5rem, 7vw, 6rem);
+    padding: clamp(4.5rem, 10vw, 9rem) 0 clamp(1.75rem, 3.5vw, 3rem);
 }
 
 .kicker {
@@ -298,12 +298,21 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
     font-size: 1.03em;
 }
 
+.hero-role {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--accent);
+    font-size: clamp(1.55rem, 3.4vw, 2.75rem);
+    line-height: 1.1;
+    margin: -0.6rem 0 1.7rem;
+}
+
 .hero-sub {
     font-size: clamp(1.05rem, 1.6vw, 1.3rem);
     line-height: 1.6;
     color: var(--ink-2);
-    max-width: 56ch;
-    margin-bottom: 2.5rem;
+    max-width: 52ch;
+    margin-bottom: 2.4rem;
 }
 .hero-sub strong { color: var(--ink); font-weight: 600; }
 
@@ -311,7 +320,6 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
     display: flex;
     flex-wrap: wrap;
     gap: 0.9rem;
-    margin-bottom: clamp(3.5rem, 7vw, 5.5rem);
 }
 
 .hero-stats {
@@ -380,6 +388,9 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
    ============================================================ */
 .section { padding: var(--section-pad) 0; }
 .section-warm { background: var(--paper-warm); }
+
+/* Work rises sooner — the grid should meet the eye right after the name */
+.section.work { padding-top: clamp(3.25rem, 7vw, 6rem); }
 
 .section-head { margin-bottom: clamp(2.75rem, 6vw, 4.5rem); }
 
@@ -770,6 +781,8 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 /* ============================================================
    04 · ABOUT
    ============================================================ */
+.about .hero-stats { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+
 .about-grid {
     display: grid;
     grid-template-columns: minmax(280px, 400px) 1fr;
