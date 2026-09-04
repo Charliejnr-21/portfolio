@@ -1,112 +1,72 @@
-# ∞ Infinity Designs — Premium Portfolio
+# ∞ Infinity Designs — Portfolio
 
 > **Where Ideas Expand Beyond Limits**
 
-Premium interactive portfolio website for **Sunday Elijah Charles** — Creative Designer & Microsoft Office Specialist.
-
-![Portfolio Preview](assets/images/logo.png)
-
----
-
-## 🌟 Live Demo
+The personal portfolio of **Sunday Elijah Charles** — Creative Designer & Microsoft Office Specialist based in Akwa Ibom, Nigeria.
 
 **[View Portfolio →](https://charliejnr-21.github.io/portfolio)**
 
 ---
 
-## 🎨 About
+## 🎨 Design
 
-A luxury glassmorphism portfolio combining the visual quality of Apple, Stripe, and Framer with interactive project showcases for graphic design, Microsoft Word, Excel, and PowerPoint projects.
+A clean, **editorial, Behance-inspired** portfolio: a light canvas, confident typography, hairline structure and one accent colour. The work leads — the interface stays out of the way.
 
-### Design System
 | Token | Value |
 |-------|-------|
-| Primary | Royal Blue `#2B50D6` |
-| Background | Deep Navy `#0E1E4A` |
-| Accent | Soft Cyan `#00D4FF` |
-| Style | Luxury Glassmorphism |
-| Typography | Clash Display + Inter + Space Grotesk |
-
----
+| Accent | Royal Blue `#1B49D8` |
+| Canvas | White `#FFFFFF` / Warm off-white `#F7F6F2` |
+| Ink | Near-black `#101014` |
+| Display type | **Archivo** (tight, bold headlines) |
+| Editorial accents | **Instrument Serif** (italic) |
+| Body | **Inter** |
+| Labels & metadata | **IBM Plex Mono** |
 
 ## ✨ Features
 
-- 🎲 **3D Rotating Logo** — Hero section with CSS 3D cube rotation
-- 🌈 **Holographic Project Grid** — Perspective tilt on hover with blur effect
-- 🪟 **Floating Pill Navbar** — Glassmorphism with scroll detection
-- ✨ **Cursor Glow** — Follows mouse with radial gradient
-- 🎬 **Morphing Blobs** — Animated organic background shapes
-- 🧲 **Magnetic Buttons** — Cursor-following button displacement
-- 📱 **Full Responsive** — Desktop, tablet, mobile
-- 🌗 **Dark/Light Mode** — Toggle with localStorage persistence
-- 🔍 **Interactive Gallery** — Category filters, hover effects, detail modals
-- 📊 **Mini Dashboard Previews** — Excel cards with live KPI visualizations
-- 📑 **Slide Stack Animations** — PowerPoint cards with 3D slide previews
-- 🎯 **Scroll Progress Bar** — Gradient progress indicator
-- 💫 **60+ Animations** — Reveal, parallax, shimmer, tilt, stagger, typing, and more
+- 🖼 **Behance-style masonry work grid** — 16 commissioned design pieces with category filters
+- 📂 **Case-study modals** — every project opens with objective, challenge, solution, palette & typography
+- 🗂 **The Office Studio** — 30 Microsoft Word / Excel / PowerPoint projects as case studies, each with its **actual file downloadable**
+- 🔢 **Editorial numbered services** — six capabilities, from brand identity to virtual assistance
+- 👤 **About** — bio, philosophy, facts, experience timeline and full toolset
+- 📄 **Resume kit** — 4 role-specific resumes + cover letters and the complete CV, one click away
+- 💬 **Testimonials** from real clients
+- ✉️ **Working contact form** (mailto-based, no backend needed)
+- ♿ **Accessible** — skip link, focus states, keyboard-operable cards, reduced-motion support
+- 📱 **Fully responsive** — desktop, tablet and mobile with a full-screen mobile menu
+- ⚡ **Zero dependencies** — semantic HTML, modern CSS, vanilla JS
 
----
+## 📂 Structure
 
-## 📂 Portfolio Sections
+```
+portfolio/
+├── index.html          # Single-page site (6 curated sections)
+├── css/
+│   └── style.css       # Design system + all components
+├── js/
+│   ├── data.js         # All project & testimonial data
+│   └── app.js          # Rendering, filters, tabs, modal, form
+└── assets/
+    ├── images/         # Design work, logo, portrait
+    └── documents/      # Word / Excel / PowerPoint files, resumes, CV
+```
 
-1. **Hero** — 3D logo, holographic grid, CTAs
-2. **About** — Bio, philosophy, stats
-3. **Services** — 6 service cards
-4. **Experience** — Timeline
-5. **Skills** — Animated bars + tags
-6. **Graphic Design Gallery** — 16 designs with filters
-7. **MS Word Projects** — 10 documents
-8. **MS Excel Projects** — 10 dashboards
-9. **MS PowerPoint Projects** — 10 presentations
-10. **Testimonials** — 6 client reviews
-11. **Clients** — 8 client cards
-12. **FAQ** — 6 accordion items
-13. **Contact** — Form + info
-14. **Resume** — 4 downloadable versions
-15. **Downloads** — 9 resource links
-16. **Footer** — Navigation + socials
+**Sections:** Hero → Selected Work → The Office Studio → Services → About (+ Experience + Resume kit) → Testimonials → Contact
 
----
+## 🛠 Tech
 
-## 📄 Documents Included
+- **HTML5** — semantic, accessible markup
+- **CSS3** — custom properties, grid, masonry columns, scroll-driven reveals
+- **Vanilla JavaScript** — no frameworks, no build step
+- **Deployment** — GitHub Pages
 
-### Word Documents (10)
-- Business Proposal, Company Profile, Annual Report, Employee Handbook, Marketing Strategy, Training Manual, Project Report, Strategic Plan, Meeting Minutes, Newsletter
-
-### Excel Dashboards (10)
-- Sales Dashboard, Financial Budget, Attendance/Payroll, Inventory, Project Tracker, CRM, Expense Tracker, KPI Dashboard, Invoice System, Business Analytics
-
-### PowerPoint Presentations (10)
-- Startup Pitch Deck, Corporate Strategy, Marketing Strategy, Training, Investor Deck, Product Launch, Conference Keynote, Sales Review, Data Storytelling, Technology Overview
-
-### Resumes & Cover Letters (8)
-- 4 role-specific resumes + 4 matching cover letters
-
----
-
-## 🛠️ Tech Stack
-
-- **HTML5** — Semantic markup
-- **CSS3** — Custom properties, glassmorphism, animations
-- **Vanilla JavaScript** — Zero dependencies
-- **Python** — Document generation (python-docx, openpyxl, python-pptx)
-- **Google Fonts** — Clash Display, Inter, Space Grotesk
-
----
-
-## 🚀 Deployment
-
-This portfolio is deployed via **GitHub Pages**.
+## 🚀 Run locally
 
 ```bash
-# Clone the repository
 git clone https://github.com/Charliejnr-21/portfolio.git
-
-# Open locally
 cd portfolio
-# Use any local server, e.g.:
 python3 -m http.server 8000
-# Then visit http://localhost:8000
+# Visit http://localhost:8000
 ```
 
 ---

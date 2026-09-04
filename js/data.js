@@ -1,10 +1,31 @@
-/* ========================================
-   Project Data — MS Office Portfolio
-   ======================================== */
+/* ============================================================
+   INFINITY DESIGNS — Portfolio Data
+   Sunday Elijah Charles — Creative Designer & MS Office Specialist
+   ============================================================ */
+
+const DESIGN_WORK = [
+    {"id": "eve-wig", "cat": "beauty", "category": "Beauty & Fashion", "year": "2025", "img": "assets/images/Eve Wig Flyer.png", "alt": "Eve Wig Flyer", "title": "Eve Wig Collection"},
+    {"id": "millicent", "cat": "beauty", "category": "Beauty & Fashion", "year": "2025", "img": "assets/images/Millicent Elegance and Charm.png", "alt": "Millicent Elegance", "title": "Millicent Elegance & Charm"},
+    {"id": "thanksgiving", "cat": "church", "category": "Faith & Church", "year": "2026", "img": "assets/images/Thanksgiving Service May.png", "alt": "Thanksgiving Service", "title": "Thanksgiving Service"},
+    {"id": "worship", "cat": "church", "category": "Faith & Church", "year": "2026", "img": "assets/images/Worship Experience.png", "alt": "Worship Experience", "title": "Worship Experience"},
+    {"id": "marissa", "cat": "food", "category": "Food & Hospitality", "year": "2025", "img": "assets/images/Marissa's Kitchen 2.png", "alt": "Marissa's Kitchen", "title": "Marissa's Kitchen"},
+    {"id": "hotel", "cat": "food", "category": "Food & Hospitality", "year": "2025", "img": "assets/images/Hotel Design.png", "alt": "Hotel Design", "title": "Big John Hotel"},
+    {"id": "auditions", "cat": "event", "category": "Events", "year": "2026", "img": "assets/images/Call fo Auditions.png", "alt": "Call for Auditions", "title": "Call for Auditions"},
+    {"id": "dog-detectives", "cat": "event", "category": "Events", "year": "2025", "img": "assets/images/Dog Detectives.png", "alt": "Dog Detectives", "title": "Dog Detectives"},
+    {"id": "album", "cat": "entertainment", "category": "Entertainment", "year": "2025", "img": "assets/images/Album Back 1.png", "alt": "Album Cover", "title": "Music Album Cover"},
+    {"id": "childrens-day", "cat": "social", "category": "Social Media", "year": "2025", "img": "assets/images/Childrens day.png", "alt": "Children's Day", "title": "Children"},
+    {"id": "teh-ry", "cat": "social", "category": "Social Media", "year": "2025", "img": "assets/images/Teh_Ry birthday 2.png", "alt": "Birthday Design", "title": "Teh_Ry Birthday"},
+    {"id": "birthday-id", "cat": "social", "category": "Social Media", "year": "2026", "img": "assets/images/Birthday Design ID.png", "alt": "Birthday Design", "title": "Birthday Celebration"},
+    {"id": "happy-weekend", "cat": "social", "category": "Social Media", "year": "2025", "img": "assets/images/Happy Weekend.png", "alt": "Happy Weekend", "title": "Happy Weekend"},
+    {"id": "october", "cat": "social", "category": "Social Media", "year": "2024", "img": "assets/images/OCTOBER DESIGN.jpg", "alt": "October Design", "title": "October Monthly Design"},
+    {"id": "april", "cat": "social", "category": "Social Media", "year": "2025", "img": "assets/images/Month of April.png", "alt": "Month of April", "title": "Month of April"},
+    {"id": "designz", "cat": "social", "category": "Social Media", "year": "2025", "img": "assets/images/DESIGNZ 1.jpg", "alt": "Designz", "title": "Promotional Design"},
+];
 
 const WORD_PROJECTS = [
     {
         id: 'word-1',
+        file: 'assets/documents/Business_Proposal_2024.docx',
         title: 'Comprehensive Business Proposal',
         category: 'Business Proposal',
         tag: 'Word Document',
@@ -23,6 +44,7 @@ const WORD_PROJECTS = [
     },
     {
         id: 'word-2',
+        file: 'assets/documents/Company_Profile_2024.docx',
         title: 'Corporate Company Profile',
         category: 'Company Profile',
         tag: 'Word Document',
@@ -41,6 +63,7 @@ const WORD_PROJECTS = [
     },
     {
         id: 'word-3',
+        file: 'assets/documents/Annual_Report_2024.docx',
         title: 'Annual Performance Report',
         category: 'Annual Report',
         tag: 'Word Document',
@@ -59,6 +82,7 @@ const WORD_PROJECTS = [
     },
     {
         id: 'word-4',
+        file: 'assets/documents/Employee_Handbook_2024.docx',
         title: 'Employee Handbook & Policy Manual',
         category: 'Policy Manual',
         tag: 'Word Document',
@@ -77,6 +101,7 @@ const WORD_PROJECTS = [
     },
     {
         id: 'word-5',
+        file: 'assets/documents/Marketing_Strategy_2025.docx',
         title: 'Marketing Strategy Document',
         category: 'Marketing Plan',
         tag: 'Word Document',
@@ -95,6 +120,7 @@ const WORD_PROJECTS = [
     },
     {
         id: 'word-6',
+        file: 'assets/documents/Training_Manual_2025.docx',
         title: 'Training Manual — Onboarding Program',
         category: 'Training Manual',
         tag: 'Word Document',
@@ -113,6 +139,7 @@ const WORD_PROJECTS = [
     },
     {
         id: 'word-7',
+        file: 'assets/documents/Project_Report_2025.docx',
         title: 'Project Implementation Report',
         category: 'Project Report',
         tag: 'Word Document',
@@ -131,6 +158,7 @@ const WORD_PROJECTS = [
     },
     {
         id: 'word-8',
+        file: 'assets/documents/Strategic_Plan_2025.docx',
         title: 'Strategic Business Plan',
         category: 'Strategic Plan',
         tag: 'Word Document',
@@ -149,6 +177,7 @@ const WORD_PROJECTS = [
     },
     {
         id: 'word-9',
+        file: 'assets/documents/Meeting_Minutes_2026.docx',
         title: 'Meeting Minutes & Resolution Document',
         category: 'Meeting Minutes',
         tag: 'Word Document',
@@ -167,6 +196,7 @@ const WORD_PROJECTS = [
     },
     {
         id: 'word-10',
+        file: 'assets/documents/Newsletter_2026.docx',
         title: 'Newsletter — Corporate Quarterly Digest',
         category: 'Newsletter',
         tag: 'Word Document',
@@ -188,6 +218,7 @@ const WORD_PROJECTS = [
 const EXCEL_PROJECTS = [
     {
         id: 'excel-1',
+        file: 'assets/documents/Sales_Dashboard_2024.xlsx',
         title: 'Sales Performance Dashboard',
         category: 'Sales Dashboard',
         tag: 'Excel Dashboard',
@@ -203,6 +234,7 @@ const EXCEL_PROJECTS = [
     },
     {
         id: 'excel-2',
+        file: 'assets/documents/Financial_Budget_2024.xlsx',
         title: 'Financial Budget & Forecast Model',
         category: 'Finance Dashboard',
         tag: 'Excel Dashboard',
@@ -218,6 +250,7 @@ const EXCEL_PROJECTS = [
     },
     {
         id: 'excel-3',
+        file: 'assets/documents/Attendance_Payroll_2024.xlsx',
         title: 'Employee Attendance & Payroll System',
         category: 'Payroll System',
         tag: 'Excel Automation',
@@ -233,6 +266,7 @@ const EXCEL_PROJECTS = [
     },
     {
         id: 'excel-4',
+        file: 'assets/documents/Inventory_Management_2024.xlsx',
         title: 'Inventory Management Tracker',
         category: 'Inventory System',
         tag: 'Excel Automation',
@@ -248,6 +282,7 @@ const EXCEL_PROJECTS = [
     },
     {
         id: 'excel-5',
+        file: 'assets/documents/Project_Tracker_2025.xlsx',
         title: 'Project Tracker & Resource Planner',
         category: 'Project Tracker',
         tag: 'Excel Dashboard',
@@ -263,6 +298,7 @@ const EXCEL_PROJECTS = [
     },
     {
         id: 'excel-6',
+        file: 'assets/documents/CRM_Dashboard_2025.xlsx',
         title: 'CRM & Customer Analytics Dashboard',
         category: 'CRM',
         tag: 'Excel Dashboard',
@@ -278,6 +314,7 @@ const EXCEL_PROJECTS = [
     },
     {
         id: 'excel-7',
+        file: 'assets/documents/Expense_Tracker_2025.xlsx',
         title: 'Expense Tracker & Budget Planner',
         category: 'Budget Planner',
         tag: 'Excel Dashboard',
@@ -293,6 +330,7 @@ const EXCEL_PROJECTS = [
     },
     {
         id: 'excel-8',
+        file: 'assets/documents/KPI_Dashboard_2025.xlsx',
         title: 'KPI Performance Dashboard',
         category: 'Performance Dashboard',
         tag: 'Excel Dashboard',
@@ -308,6 +346,7 @@ const EXCEL_PROJECTS = [
     },
     {
         id: 'excel-9',
+        file: 'assets/documents/Invoice_System_2026.xlsx',
         title: 'Invoice & Payment Tracking System',
         category: 'Invoice System',
         tag: 'Excel Automation',
@@ -323,6 +362,7 @@ const EXCEL_PROJECTS = [
     },
     {
         id: 'excel-10',
+        file: 'assets/documents/Business_Analytics_2026.xlsx',
         title: 'Business Analytics Dashboard',
         category: 'Business Analytics',
         tag: 'Excel Dashboard',
@@ -341,6 +381,7 @@ const EXCEL_PROJECTS = [
 const PPT_PROJECTS = [
     {
         id: 'ppt-1',
+        file: 'assets/documents/Startup_Pitch_Deck_2024.pptx',
         title: 'Startup Pitch Deck',
         category: 'Pitch Deck',
         tag: 'PowerPoint',
@@ -355,6 +396,7 @@ const PPT_PROJECTS = [
     },
     {
         id: 'ppt-2',
+        file: 'assets/documents/Corporate_Strategy_2024.pptx',
         title: 'Corporate Strategy Presentation',
         category: 'Corporate Presentation',
         tag: 'PowerPoint',
@@ -369,6 +411,7 @@ const PPT_PROJECTS = [
     },
     {
         id: 'ppt-3',
+        file: 'assets/documents/Marketing_Strategy_2024.pptx',
         title: 'Marketing Campaign Strategy Deck',
         category: 'Marketing Strategy',
         tag: 'PowerPoint',
@@ -383,6 +426,7 @@ const PPT_PROJECTS = [
     },
     {
         id: 'ppt-4',
+        file: 'assets/documents/Training_Onboarding_2025.pptx',
         title: 'Employee Training & Onboarding Slides',
         category: 'Training Presentation',
         tag: 'PowerPoint',
@@ -397,6 +441,7 @@ const PPT_PROJECTS = [
     },
     {
         id: 'ppt-5',
+        file: 'assets/documents/Investor_Deck_2025.pptx',
         title: 'Investor Relations Annual Review',
         category: 'Investor Deck',
         tag: 'PowerPoint',
@@ -411,6 +456,7 @@ const PPT_PROJECTS = [
     },
     {
         id: 'ppt-6',
+        file: 'assets/documents/Product_Launch_2025.pptx',
         title: 'Product Launch Presentation',
         category: 'Product Launch',
         tag: 'PowerPoint',
@@ -425,6 +471,7 @@ const PPT_PROJECTS = [
     },
     {
         id: 'ppt-7',
+        file: 'assets/documents/Conference_Keynote_2025.pptx',
         title: 'Conference Keynote Presentation',
         category: 'Conference Presentation',
         tag: 'PowerPoint',
@@ -439,6 +486,7 @@ const PPT_PROJECTS = [
     },
     {
         id: 'ppt-8',
+        file: 'assets/documents/Sales_Review_2026.pptx',
         title: 'Sales Performance Review Deck',
         category: 'Sales Presentation',
         tag: 'PowerPoint',
@@ -453,6 +501,7 @@ const PPT_PROJECTS = [
     },
     {
         id: 'ppt-9',
+        file: 'assets/documents/Data_Storytelling_2026.pptx',
         title: 'Data Storytelling & Analytics Deck',
         category: 'Data Storytelling',
         tag: 'PowerPoint',
@@ -467,6 +516,7 @@ const PPT_PROJECTS = [
     },
     {
         id: 'ppt-10',
+        file: 'assets/documents/Technology_Overview_2026.pptx',
         title: 'Technology Overview & Innovation Deck',
         category: 'Technology Overview',
         tag: 'PowerPoint',
@@ -481,7 +531,6 @@ const PPT_PROJECTS = [
     }
 ];
 
-// Gallery project detail data
 const GALLERY_DETAILS = {
     'eve-wig': {
         title: 'Eve Wig Collection',
@@ -708,3 +757,12 @@ const GALLERY_DETAILS = {
         solution: 'Used a bold, versatile layout with clear contact information and a design that translates well across different social platforms.'
     }
 };
+
+const TESTIMONIALS = [
+    { quote: "Elijah's designs brought our brand to life. The social media flyers were stunning — premium quality that made our products stand out. Absolutely exceptional work.", initials: 'EM', name: 'Emiz Luxury Hair', role: 'Brand Identity & Social Media' },
+    { quote: "The promotional designs exceeded our expectations. Elijah understood our brand vibe immediately and delivered vibrant, eye-catching visuals that drove real engagement.", initials: 'CP', name: 'CRAVE by Princess', role: 'Promotional Design' },
+    { quote: "Our luxury fragrance brand needed a designer who could convey elegance through visuals. Elijah delivered precisely that — sophisticated, polished, and on-brand every time.", initials: 'DS', name: 'DEMI Scents', role: 'Product Flyer Design' },
+    { quote: "Professional, creative, and incredibly detail-oriented. The Excel dashboard Elijah built transformed our raw data into clear, actionable insights. A true specialist.", initials: 'CO', name: 'Construction Ops Client', role: 'Excel Dashboard & Reporting' },
+    { quote: "Elijah's presentation designs elevated our corporate meetings. The slides were visually stunning, well-organized, and told our story with impact. Highly recommended.", initials: 'HL', name: 'Happylizzi Brand', role: 'Brand & Presentation Design' },
+    { quote: "From hotel promotional flyers to complete branding packages, Elijah consistently delivers premium quality. His attention to detail and creative eye are unmatched.", initials: 'BJ', name: 'Big John Hotel', role: 'Hospitality Design' }
+];
