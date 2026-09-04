@@ -2,7 +2,7 @@
 
 > **From vision.** — *Orí* (Yoruba): inner vision, destiny.
 
-The studio portfolio of **Elijah Sunday — Creative Lead at Orivon**. Brand identity · Art direction · Campaign design, plus business documents, dashboards and presentations. Based in Akwa Ibom, Nigeria — working worldwide.
+The studio portfolio of **Elijah Charles Sunday — Creative Lead at Orivon**. Brand identity · Art direction · Campaign design, plus business documents, dashboards and presentations. Based in Akwa Ibom, Nigeria — working worldwide.
 
 **[View Portfolio →](https://charliejnr-21.github.io/portfolio)**
 
@@ -51,7 +51,7 @@ portfolio/
     └── documents/      # Word / Excel / PowerPoint files, resumes, CV
 ```
 
-**Brand assets** live in `assets/brand/` (mark, favicons). The orbit-O mark is an interim stand-in — client-supplied `logo.png` / `ORIVON WORDMARK.png` / `FAV ICON.png` slot in directly when supplied.
+**Brand assets** live in `assets/brand/` — official Orivon mark (`mark.png`), wordmark (`wordmark.png`), favicon set (light + dark browser variants, apple-touch-icon) and OG share image, all generated from the client-supplied master files.
 
 **Sections:** Hero → Selected Work → The Office Studio → Services → About (+ Experience + Resume kit) → Testimonials → Contact
 
@@ -75,7 +75,7 @@ python3 -m http.server 8000
 
 ## 👤 Author
 
-**Elijah Sunday** — Creative Lead, Orivon
+**Elijah Charles Sunday** — Creative Lead, Orivon
 - 📧 charliejnr38@gmail.com
 - 🐙 [GitHub](https://github.com/Charliejnr-21)
 - 📸 [Instagram](https://instagram.com/charliejnr38)
