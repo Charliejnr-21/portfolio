@@ -4,7 +4,7 @@
 
 The studio portfolio of **Elijah Charles Sunday — Creative Lead at Orivon**. Brand identity · Art direction · Campaign design, plus business documents, dashboards and presentations. Based in Akwa Ibom, Nigeria — working worldwide.
 
-**[View Portfolio →](https://charliejnr-21.github.io/portfolio)**
+### 🌐 Live site — [https://charliejnr-21.github.io/portfolio/](https://charliejnr-21.github.io/portfolio/)
 
 ---
 
