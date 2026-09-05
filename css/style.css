@@ -101,6 +101,9 @@ html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     scrollbar-color: var(--gold-shadow) transparent;
+    scroll-padding-top: 90px; /* offset for the sticky header on anchor jumps */
+    overflow-x: hidden; /* fallback for browsers without `clip` */
+    overflow-x: clip;   /* prevents horizontal scroll without creating a scroll container */
 }
 
 body {
@@ -111,6 +114,9 @@ body {
     background: var(--bg);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent; /* remove grey tap flash on mobile */
+    overflow-x: hidden; /* fallback for browsers without `clip` */
+    overflow-x: clip;   /* keeps any negative-inset / oversized children from scrolling the page */
 }
 
 /* Brand headings — Deep Navy on light ground, Warm Ivory on dark */
@@ -167,6 +173,7 @@ html.theming *::after {
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+a, button { touch-action: manipulation; } /* faster taps, no 300ms delay / double-tap zoom */
 ul, ol { list-style: none; }
 sup { font-size: 0.62em; }
 
@@ -180,6 +187,8 @@ sup { font-size: 0.62em; }
 
 .wrap {
     width: min(var(--wrap), 100% - var(--gutter) * 2);
+    max-width: 100%;
+    min-width: 0;
     margin-inline: auto;
 }
 
@@ -255,6 +264,7 @@ sup { font-size: 0.62em; }
     position: sticky;
     top: 0;
     z-index: 200;
+    padding-top: env(safe-area-inset-top); /* respect notches */
     transition: background var(--t-med) var(--ease), border-color var(--t-med) var(--ease),
                 box-shadow var(--t-med) var(--ease);
     border-bottom: 1px solid transparent;
@@ -457,6 +467,8 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 .marquee {
     border-block: 1px solid var(--line);
     overflow: hidden;
+    max-width: 100%;
+    min-width: 0;
     padding: 1.05rem 0;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
     mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
@@ -650,7 +662,7 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 
 .doc-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
 }
 
@@ -817,13 +829,14 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 
 .service-row {
     display: grid;
-    grid-template-columns: 5.5rem 1fr 3.5rem;
+    grid-template-columns: 5.5rem minmax(0, 1fr) 3.5rem;
     align-items: start;
     gap: 2rem;
     padding: 2.3rem 0;
     border-bottom: 1px solid var(--line);
     transition: background var(--t-med) var(--ease), padding var(--t-med) var(--ease);
 }
+.service-body { min-width: 0; }
 .service-row:hover { background: var(--accent-tint); }
 
 .service-num {
@@ -889,10 +902,11 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 
 .about-grid {
     display: grid;
-    grid-template-columns: minmax(280px, 400px) 1fr;
+    grid-template-columns: minmax(280px, 400px) minmax(0, 1fr);
     gap: clamp(2.5rem, 6vw, 5rem);
     margin-bottom: clamp(4rem, 8vw, 6.5rem);
 }
+.about-body { min-width: 0; }
 
 .about-portrait {
     align-self: start;
@@ -948,14 +962,14 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 
 .fact-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 0;
     border-top: 1px solid var(--line-2);
     margin: 2.25rem 0;
 }
 .fact-list li {
     display: grid;
-    grid-template-columns: 92px 1fr;
+    grid-template-columns: 92px minmax(0, 1fr);
     gap: 1rem;
     padding: 0.95rem 0.25rem 0.95rem 0;
     border-bottom: 1px solid var(--line-2);
@@ -979,7 +993,7 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 .timeline-item {
     position: relative;
     display: grid;
-    grid-template-columns: 170px 1fr;
+    grid-template-columns: 170px minmax(0, 1fr);
     gap: 2rem;
     padding: 0 0 2.4rem 2rem;
 }
@@ -1075,7 +1089,7 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
    ============================================================ */
 .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
 }
 .testimonial-card {
@@ -1125,7 +1139,7 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1.15fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
     gap: clamp(2.5rem, 6vw, 5.5rem);
     align-items: start;
 }
@@ -1228,11 +1242,15 @@ a.contact-v:hover { color: var(--accent-text); }
 }
 .footer-inner {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1.5rem 2rem;
     padding: 2.75rem 0;
 }
+.footer-brand { min-width: 0; }
+.footer-nav { flex-wrap: wrap; gap: 1rem 1.6rem; }
+.footer-meta { flex-wrap: wrap; gap: 1rem; }
 .footer-brand { display: flex; align-items: center; gap: 1rem; }
 .footer-mark {
     display: block;
@@ -1271,7 +1289,7 @@ a.contact-v:hover { color: var(--accent-text); }
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1.4rem 0;
+    padding: 1.4rem 0 calc(1.4rem + env(safe-area-inset-bottom));
     border-top: 1px solid var(--line);
 }
 .footer-base p {
@@ -1330,7 +1348,7 @@ a.contact-v:hover { color: var(--accent-text); }
 }
 .modal-close {
     position: absolute;
-    top: 1rem;
+    top: calc(1rem + env(safe-area-inset-top));
     right: 1rem;
     z-index: 5;
     display: grid;
@@ -1451,10 +1469,13 @@ a.contact-v:hover { color: var(--accent-text); }
    ============================================================ */
 .hero-inner {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: clamp(2rem, 5vw, 4.5rem);
     align-items: center;
+    max-width: 100%;
+    min-width: 0;
 }
+.hero-copy { min-width: 0; }
 .hero-portrait { position: relative; }
 .hero-portrait img {
     width: clamp(190px, 24vw, 300px);
@@ -1498,7 +1519,7 @@ a.contact-v:hover { color: var(--accent-text); }
    ============================================================ */
 .skills-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 1.25rem;
 }
 .skill-card {
@@ -1543,7 +1564,7 @@ a.contact-v:hover { color: var(--accent-text); }
 .to-top-fab {
     position: fixed;
     right: clamp(1rem, 3vw, 1.75rem);
-    bottom: clamp(1rem, 3vw, 1.75rem);
+    bottom: calc(clamp(1rem, 3vw, 1.75rem) + env(safe-area-inset-bottom));
     z-index: 300;
     display: grid;
     place-items: center;
@@ -1572,6 +1593,8 @@ a.contact-v:hover { color: var(--accent-text); }
 .studio-strip .mono-label { margin-bottom: 1.3rem; }
 .strip-viewport {
     overflow: hidden;
+    max-width: 100%;
+    min-width: 0;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
     mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
@@ -1616,9 +1639,9 @@ a.contact-v:hover { color: var(--accent-text); }
 
 @media (max-width: 1020px) {
     .work-grid { columns: 2; }
-    .doc-grid { grid-template-columns: repeat(2, 1fr); }
-    .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
-    .about-grid { grid-template-columns: minmax(240px, 320px) 1fr; }
+    .doc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .testimonial-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .about-grid { grid-template-columns: minmax(240px, 320px) minmax(0, 1fr); }
 }
 
 @media (max-width: 900px) {
@@ -1639,6 +1662,8 @@ a.contact-v:hover { color: var(--accent-text); }
         background: var(--paper);
         visibility: hidden;
         opacity: 0;
+        overflow-y: auto;
+        overscroll-behavior: contain;
         transition: opacity var(--t-med) var(--ease), visibility var(--t-med);
     }
     body.nav-open .main-nav { visibility: visible; opacity: 1; }
@@ -1668,7 +1693,7 @@ a.contact-v:hover { color: var(--accent-text); }
     .contact-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
     .about-portrait { position: static; max-width: 380px; }
-    .service-row { grid-template-columns: 3rem 1fr; gap: 1.1rem; }
+    .service-row { grid-template-columns: 3rem minmax(0, 1fr); gap: 1.1rem; }
     .service-arrow { display: none; }
     .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
     .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 1.6rem 0; }
@@ -1689,7 +1714,137 @@ a.contact-v:hover { color: var(--accent-text); }
     .footer-inner { flex-direction: column; align-items: flex-start; gap: 1.6rem; }
     .footer-base { flex-direction: column; gap: 0.6rem; align-items: flex-start; }
     .modal { padding: 0; }
-    .modal-panel { max-height: 100dvh; height: 100dvh; border-radius: 0; }
+    .modal-panel { max-height: 100vh; max-height: 100dvh; height: 100vh; height: 100dvh; border-radius: 0; }
+}
+
+/* ============================================================
+   RESPONSIVE HARDENING — low-end phones & laptops
+   No visual change at normal widths; only protects against
+   overflow / scatter when content is wider than its track.
+   ============================================================ */
+
+/* Let long unbreakable strings (emails, phone numbers, URLs) wrap
+   instead of forcing horizontal overflow on narrow screens. */
+p, li, dd, a, button,
+.contact-v, .fact-v, .footer-tag, .timeline-org,
+.resume-meta, .doc-meta, .nav-cta, .hero-sub, .about-body p {
+    overflow-wrap: anywhere;
+}
+
+/* Touch devices: neutralise hover "lift" transforms so a tap doesn't
+   leave elements stuck in a translated/hovered state — the glitch
+   cheap phones show. Colour/background hovers are harmless, left on. */
+@media (hover: none) {
+    .work-card:hover img,
+    .doc-card:hover,
+    .testimonial-card:hover,
+    .skill-card:hover,
+    .resume-card:hover,
+    .hero-portrait:hover img,
+    .hero-portrait:hover::after,
+    .strip-track figure:hover img,
+    .service-row:hover .service-arrow {
+        transform: none;
+    }
+    /* keep the offset frame at its resting inset on touch (no stuck expansion) */
+    .hero-portrait:hover::after { inset: 10px -10px -10px 10px; opacity: 0.55; }
+    .marquee:hover .marquee-track,
+    .studio-strip:hover .strip-track,
+    .studio-strip:focus-within .strip-track {
+        animation-play-state: running;
+    }
+}
+
+/* ------------------------------------------------------------
+   BULLETPROOF CONTAINMENT — nothing may ever exceed the viewport
+   (the midnight background edge). Pills / chips / buttons get a
+   width cap and the long-text break rule already applied; this also
+   stops a single pill from forcing horizontal overflow.
+   ------------------------------------------------------------ */
+.tag-list,
+.filter-bar,
+.doc-tabs { min-width: 0; }
+
+.tag-list li,
+.filter-btn,
+.doc-tab,
+.resume-card,
+.skill-card { max-width: 100%; }
+
+/* Smaller mobile tier (<=480px: 414 / 430 and everything in between).
+   Refines spacing + typography for large phones; tablet/desktop untouched. */
+@media (max-width: 480px) {
+    :root { --gutter: 1.1rem; }
+
+    .section { padding: clamp(3.25rem, 9vw, 5rem) 0; }
+    .section.work { padding-top: clamp(2.75rem, 8vw, 4.5rem); }
+    .hero { padding: clamp(3.25rem, 8vw, 5rem) 0 clamp(1.5rem, 4vw, 2.5rem); }
+    .section-head { margin-bottom: clamp(2rem, 8vw, 3rem); }
+
+    .hero-title { font-size: clamp(2.4rem, 7.5vw, 3.4rem); }
+    .hero-role { font-size: clamp(1.45rem, 5vw, 2.1rem); }
+    .contact-title { font-size: clamp(2.2rem, 8vw, 3.4rem) !important; }
+
+    .btn {
+        white-space: normal;       /* wrap instead of overflowing */
+        max-width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 0.8rem 1.45rem;
+    }
+    .btn svg { flex-shrink: 0; }
+    .hero-cta { gap: 0.75rem; }
+
+    .about-portrait { margin-inline: auto; }   /* centre the portrait on phones */
+    .resume-grid { grid-template-columns: 1fr; }
+    .testimonial-card { padding: clamp(1.5rem, 5vw, 1.9rem); }
+    .doc-preview { padding: clamp(1.4rem, 5vw, 1.9rem); }
+    .footer-tag { font-size: 0.78rem; }
+
+    /* iOS zooms the viewport on focus when an input is <16px — force 1rem on phones */
+    .form-field input,
+    .form-field select,
+    .form-field textarea { font-size: 1rem; }
+}
+
+/* Ultra-narrow phones (<=400px: 320 / 360 / 390 common sizes).
+   Allow buttons to wrap, ease the type scale and tighten gutters so
+   content always fits inside the background with zero spill. */
+@media (max-width: 400px) {
+    :root { --gutter: 1.1rem; }
+
+    .btn {
+        white-space: normal;       /* wrap instead of overflowing */
+        max-width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding-left: 1.3rem;
+        padding-right: 1.3rem;
+    }
+    .btn svg { flex-shrink: 0; }
+
+    .hero-title { font-size: clamp(2.25rem, 9vw, 3.4rem); }
+    .hero-role { font-size: clamp(1.4rem, 6vw, 2rem); }
+    .contact-title { font-size: clamp(2.1rem, 9vw, 3rem) !important; }
+
+    .section { padding: clamp(3.5rem, 13vw, 6rem) 0; }
+    .section.work { padding-top: clamp(2.75rem, 11vw, 5rem); }
+
+    .hero-portrait img { width: 132px; }
+    .hero-portrait::after { inset: 8px -8px -8px 8px; }
+
+    .footer-tag { font-size: 0.72rem; }
+}
+
+/* Short landscape phones (e.g. 812x375, 932x430): tighten vertical rhythm so
+   content fits without awkward scrolling. Width-based rules already handle layout;
+   this only targets small landscape viewports, never tablets or portrait phones. */
+@media (max-height: 500px) and (orientation: landscape) and (max-width: 960px) {
+    .hero { padding-top: clamp(1.5rem, 5vh, 3rem); padding-bottom: 1rem; }
+    .section { padding-top: clamp(2rem, 7vh, 4rem); padding-bottom: clamp(2rem, 7vh, 4rem); }
+    .section.work { padding-top: clamp(1.5rem, 6vh, 3rem); }
+    .hero-portrait img { width: 120px; }
+    .main-nav { padding-top: 4rem; }
 }
 
 /* ---------- Reduced motion ---------- */
