@@ -101,6 +101,8 @@ html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     scrollbar-color: var(--gold-shadow) transparent;
+    overflow-x: hidden; /* fallback for browsers without `clip` */
+    overflow-x: clip;   /* prevents horizontal scroll without creating a scroll container */
 }
 
 body {
@@ -111,6 +113,8 @@ body {
     background: var(--bg);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden; /* fallback for browsers without `clip` */
+    overflow-x: clip;   /* keeps any negative-inset / oversized children from scrolling the page */
 }
 
 /* Brand headings — Deep Navy on light ground, Warm Ivory on dark */
@@ -180,6 +184,8 @@ sup { font-size: 0.62em; }
 
 .wrap {
     width: min(var(--wrap), 100% - var(--gutter) * 2);
+    max-width: 100%;
+    min-width: 0;
     margin-inline: auto;
 }
 
@@ -457,6 +463,8 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 .marquee {
     border-block: 1px solid var(--line);
     overflow: hidden;
+    max-width: 100%;
+    min-width: 0;
     padding: 1.05rem 0;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
     mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
@@ -1454,6 +1462,8 @@ a.contact-v:hover { color: var(--accent-text); }
     grid-template-columns: 1fr auto;
     gap: clamp(2rem, 5vw, 4.5rem);
     align-items: center;
+    max-width: 100%;
+    min-width: 0;
 }
 .hero-portrait { position: relative; }
 .hero-portrait img {
@@ -1572,6 +1582,8 @@ a.contact-v:hover { color: var(--accent-text); }
 .studio-strip .mono-label { margin-bottom: 1.3rem; }
 .strip-viewport {
     overflow: hidden;
+    max-width: 100%;
+    min-width: 0;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
     mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
