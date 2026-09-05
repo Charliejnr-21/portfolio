@@ -10,13 +10,17 @@ The studio portfolio of **Elijah Charles Sunday — Creative Lead at Orivon**. B
 
 ## 🎨 Design
 
-A clean, **editorial, Behance-inspired** portfolio: a light canvas, confident typography, hairline structure and one accent colour. The work leads — the interface stays out of the way.
+A clean, **editorial, Behance-inspired** portfolio in the official Orivon brand palette, with a premium dark mode and a warm light mode. The work leads — the interface stays out of the way.
+
+**Themes:** **Orivon Midnight** (default — Deep Navy Black canvas, Warm Ivory type, Champagne Gold accents) and **Orivon Ivory** (Warm Ivory canvas, Deep Navy headings, Gold Shadow accents), toggled in the header and remembered per visitor.
 
 | Token | Value |
 |-------|-------|
-| Accent | Royal Blue `#1B49D8` |
-| Canvas | White `#FFFFFF` / Warm off-white `#F7F6F2` |
-| Ink | Near-black `#101014` |
+| Canvas | Deep Navy Black `#071321` / Warm Ivory `#F7F2E8` |
+| Surfaces | Deep Navy `#0B1F3A` / Pure White `#FFFFFF` |
+| Ink | Warm Ivory `#F7F2E8` / Charcoal Black `#111315` |
+| Accent | Champagne Gold `#D6B36A` / Gold Shadow `#A98545` |
+| Secondary | Soft Gold `#E5C98A` · Slate Blue `#344B68` · Muted Ivory `#E9E1D2` |
 | Display type | **Archivo** (tight, bold headlines) |
 | Editorial accents | **Instrument Serif** (italic) |
 | Body | **Inter** |
@@ -30,6 +34,9 @@ A clean, **editorial, Behance-inspired** portfolio: a light canvas, confident ty
 - 🔢 **Editorial numbered services** — six capabilities, from brand identity to virtual assistance
 - 👤 **About** — bio, philosophy, facts, experience timeline and full toolset
 - 📄 **Resume kit** — 4 role-specific resumes + cover letters and the complete CV, one click away
+- 🎭 **Dual theme** — Orivon Midnight / Ivory with smooth cross-fade and per-visitor memory
+- 🧭 **Scrollspy nav**, gold scrollbar, back-to-top button, ambient brand wash
+- 📸 **Studio strip** — a seamless marquee of the creative lead's portraits in About
 - 💬 **Testimonials** from real clients
 - ✉️ **Working contact form** (mailto-based, no backend needed)
 - ♿ **Accessible** — skip link, focus states, keyboard-operable cards, reduced-motion support
@@ -48,12 +55,15 @@ portfolio/
 │   └── app.js          # Rendering, filters, tabs, modal, form
 └── assets/
     ├── images/         # Design work, logo, portrait
+    ├── portraits/      # Portrait set of the creative lead (elijah-01…10)
     └── documents/      # Word / Excel / PowerPoint files, resumes, CV
 ```
 
 **Brand assets** live in `assets/brand/` — official Orivon mark (`mark.png`), wordmark (`wordmark.png`), favicon set (light + dark browser variants, apple-touch-icon) and OG share image, all generated from the client-supplied master files.
 
-**Sections:** Hero → Selected Work → The Office Studio → Services → About (+ Experience + Resume kit) → Testimonials → Contact
+**Sections:** Hero → Selected Work → The Office Studio → Services → Capabilities → About (+ Studio strip + Experience + Resume kit) → Testimonials → Contact
+
+**Planning docs** live in `docs/` — dated session records (brand palette application, reference deconstruction, rebrand plan, free-domain guide).
 
 ## 🛠 Tech
 
