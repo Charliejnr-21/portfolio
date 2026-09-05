@@ -101,6 +101,7 @@ html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     scrollbar-color: var(--gold-shadow) transparent;
+    scroll-padding-top: 90px; /* offset for the sticky header on anchor jumps */
     overflow-x: hidden; /* fallback for browsers without `clip` */
     overflow-x: clip;   /* prevents horizontal scroll without creating a scroll container */
 }
@@ -113,6 +114,7 @@ body {
     background: var(--bg);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent; /* remove grey tap flash on mobile */
     overflow-x: hidden; /* fallback for browsers without `clip` */
     overflow-x: clip;   /* keeps any negative-inset / oversized children from scrolling the page */
 }
@@ -171,6 +173,7 @@ html.theming *::after {
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+a, button { touch-action: manipulation; } /* faster taps, no 300ms delay / double-tap zoom */
 ul, ol { list-style: none; }
 sup { font-size: 0.62em; }
 
@@ -261,6 +264,7 @@ sup { font-size: 0.62em; }
     position: sticky;
     top: 0;
     z-index: 200;
+    padding-top: env(safe-area-inset-top); /* respect notches */
     transition: background var(--t-med) var(--ease), border-color var(--t-med) var(--ease),
                 box-shadow var(--t-med) var(--ease);
     border-bottom: 1px solid transparent;
@@ -1285,7 +1289,7 @@ a.contact-v:hover { color: var(--accent-text); }
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1.4rem 0;
+    padding: 1.4rem 0 calc(1.4rem + env(safe-area-inset-bottom));
     border-top: 1px solid var(--line);
 }
 .footer-base p {
@@ -1344,7 +1348,7 @@ a.contact-v:hover { color: var(--accent-text); }
 }
 .modal-close {
     position: absolute;
-    top: 1rem;
+    top: calc(1rem + env(safe-area-inset-top));
     right: 1rem;
     z-index: 5;
     display: grid;
@@ -1560,7 +1564,7 @@ a.contact-v:hover { color: var(--accent-text); }
 .to-top-fab {
     position: fixed;
     right: clamp(1rem, 3vw, 1.75rem);
-    bottom: clamp(1rem, 3vw, 1.75rem);
+    bottom: calc(clamp(1rem, 3vw, 1.75rem) + env(safe-area-inset-bottom));
     z-index: 300;
     display: grid;
     place-items: center;
@@ -1710,7 +1714,7 @@ a.contact-v:hover { color: var(--accent-text); }
     .footer-inner { flex-direction: column; align-items: flex-start; gap: 1.6rem; }
     .footer-base { flex-direction: column; gap: 0.6rem; align-items: flex-start; }
     .modal { padding: 0; }
-    .modal-panel { max-height: 100dvh; height: 100dvh; border-radius: 0; }
+    .modal-panel { max-height: 100vh; max-height: 100dvh; height: 100vh; height: 100dvh; border-radius: 0; }
 }
 
 /* ============================================================
@@ -1737,10 +1741,13 @@ p, li, dd, a, button,
     .skill-card:hover,
     .resume-card:hover,
     .hero-portrait:hover img,
+    .hero-portrait:hover::after,
     .strip-track figure:hover img,
     .service-row:hover .service-arrow {
         transform: none;
     }
+    /* keep the offset frame at its resting inset on touch (no stuck expansion) */
+    .hero-portrait:hover::after { inset: 10px -10px -10px 10px; opacity: 0.55; }
     .marquee:hover .marquee-track,
     .studio-strip:hover .strip-track,
     .studio-strip:focus-within .strip-track {
@@ -1793,6 +1800,11 @@ p, li, dd, a, button,
     .testimonial-card { padding: clamp(1.5rem, 5vw, 1.9rem); }
     .doc-preview { padding: clamp(1.4rem, 5vw, 1.9rem); }
     .footer-tag { font-size: 0.78rem; }
+
+    /* iOS zooms the viewport on focus when an input is <16px — force 1rem on phones */
+    .form-field input,
+    .form-field select,
+    .form-field textarea { font-size: 1rem; }
 }
 
 /* Ultra-narrow phones (<=400px: 320 / 360 / 390 common sizes).
@@ -1822,6 +1834,17 @@ p, li, dd, a, button,
     .hero-portrait::after { inset: 8px -8px -8px 8px; }
 
     .footer-tag { font-size: 0.72rem; }
+}
+
+/* Short landscape phones (e.g. 812x375, 932x430): tighten vertical rhythm so
+   content fits without awkward scrolling. Width-based rules already handle layout;
+   this only targets small landscape viewports, never tablets or portrait phones. */
+@media (max-height: 500px) and (orientation: landscape) and (max-width: 960px) {
+    .hero { padding-top: clamp(1.5rem, 5vh, 3rem); padding-bottom: 1rem; }
+    .section { padding-top: clamp(2rem, 7vh, 4rem); padding-bottom: clamp(2rem, 7vh, 4rem); }
+    .section.work { padding-top: clamp(1.5rem, 6vh, 3rem); }
+    .hero-portrait img { width: 120px; }
+    .main-nav { padding-top: 4rem; }
 }
 
 /* ---------- Reduced motion ---------- */
