@@ -1721,7 +1721,7 @@ a.contact-v:hover { color: var(--accent-text); }
 
 /* Let long unbreakable strings (emails, phone numbers, URLs) wrap
    instead of forcing horizontal overflow on narrow screens. */
-p, li, dd, a,
+p, li, dd, a, button,
 .contact-v, .fact-v, .footer-tag, .timeline-org,
 .resume-meta, .doc-meta, .nav-cta, .hero-sub, .about-body p {
     overflow-wrap: anywhere;
@@ -1746,6 +1746,51 @@ p, li, dd, a,
     .studio-strip:focus-within .strip-track {
         animation-play-state: running;
     }
+}
+
+/* ------------------------------------------------------------
+   BULLETPROOF CONTAINMENT — nothing may ever exceed the viewport
+   (the midnight background edge). Pills / chips / buttons get a
+   width cap and the long-text break rule already applied; this also
+   stops a single pill from forcing horizontal overflow.
+   ------------------------------------------------------------ */
+.tag-list,
+.filter-bar,
+.doc-tabs { min-width: 0; }
+
+.tag-list li,
+.filter-btn,
+.doc-tab,
+.resume-card,
+.skill-card { max-width: 100%; }
+
+/* Ultra-narrow phones (<=400px: 320 / 360 / 390 common sizes).
+   Allow buttons to wrap, ease the type scale and tighten gutters so
+   content always fits inside the background with zero spill. */
+@media (max-width: 400px) {
+    :root { --gutter: 1.1rem; }
+
+    .btn {
+        white-space: normal;       /* wrap instead of overflowing */
+        max-width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding-left: 1.3rem;
+        padding-right: 1.3rem;
+    }
+    .btn svg { flex-shrink: 0; }
+
+    .hero-title { font-size: clamp(2.25rem, 9vw, 3.4rem); }
+    .hero-role { font-size: clamp(1.4rem, 6vw, 2rem); }
+    .contact-title { font-size: clamp(2.1rem, 9vw, 3rem) !important; }
+
+    .section { padding: clamp(3.5rem, 13vw, 6rem) 0; }
+    .section.work { padding-top: clamp(2.75rem, 11vw, 5rem); }
+
+    .hero-portrait img { width: 132px; }
+    .hero-portrait::after { inset: 8px -8px -8px 8px; }
+
+    .footer-tag { font-size: 0.72rem; }
 }
 
 /* ---------- Reduced motion ---------- */
