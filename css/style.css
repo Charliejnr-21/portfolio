@@ -658,7 +658,7 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 
 .doc-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
 }
 
@@ -825,13 +825,14 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 
 .service-row {
     display: grid;
-    grid-template-columns: 5.5rem 1fr 3.5rem;
+    grid-template-columns: 5.5rem minmax(0, 1fr) 3.5rem;
     align-items: start;
     gap: 2rem;
     padding: 2.3rem 0;
     border-bottom: 1px solid var(--line);
     transition: background var(--t-med) var(--ease), padding var(--t-med) var(--ease);
 }
+.service-body { min-width: 0; }
 .service-row:hover { background: var(--accent-tint); }
 
 .service-num {
@@ -897,10 +898,11 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 
 .about-grid {
     display: grid;
-    grid-template-columns: minmax(280px, 400px) 1fr;
+    grid-template-columns: minmax(280px, 400px) minmax(0, 1fr);
     gap: clamp(2.5rem, 6vw, 5rem);
     margin-bottom: clamp(4rem, 8vw, 6.5rem);
 }
+.about-body { min-width: 0; }
 
 .about-portrait {
     align-self: start;
@@ -956,14 +958,14 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 
 .fact-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 0;
     border-top: 1px solid var(--line-2);
     margin: 2.25rem 0;
 }
 .fact-list li {
     display: grid;
-    grid-template-columns: 92px 1fr;
+    grid-template-columns: 92px minmax(0, 1fr);
     gap: 1rem;
     padding: 0.95rem 0.25rem 0.95rem 0;
     border-bottom: 1px solid var(--line-2);
@@ -987,7 +989,7 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 .timeline-item {
     position: relative;
     display: grid;
-    grid-template-columns: 170px 1fr;
+    grid-template-columns: 170px minmax(0, 1fr);
     gap: 2rem;
     padding: 0 0 2.4rem 2rem;
 }
@@ -1083,7 +1085,7 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
    ============================================================ */
 .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
 }
 .testimonial-card {
@@ -1133,7 +1135,7 @@ body.nav-open .nav-toggle span:last-child  { transform: translateY(-3.8px) rotat
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1.15fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
     gap: clamp(2.5rem, 6vw, 5.5rem);
     align-items: start;
 }
@@ -1236,11 +1238,15 @@ a.contact-v:hover { color: var(--accent-text); }
 }
 .footer-inner {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1.5rem 2rem;
     padding: 2.75rem 0;
 }
+.footer-brand { min-width: 0; }
+.footer-nav { flex-wrap: wrap; gap: 1rem 1.6rem; }
+.footer-meta { flex-wrap: wrap; gap: 1rem; }
 .footer-brand { display: flex; align-items: center; gap: 1rem; }
 .footer-mark {
     display: block;
@@ -1459,12 +1465,13 @@ a.contact-v:hover { color: var(--accent-text); }
    ============================================================ */
 .hero-inner {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: clamp(2rem, 5vw, 4.5rem);
     align-items: center;
     max-width: 100%;
     min-width: 0;
 }
+.hero-copy { min-width: 0; }
 .hero-portrait { position: relative; }
 .hero-portrait img {
     width: clamp(190px, 24vw, 300px);
@@ -1508,7 +1515,7 @@ a.contact-v:hover { color: var(--accent-text); }
    ============================================================ */
 .skills-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 1.25rem;
 }
 .skill-card {
@@ -1628,9 +1635,9 @@ a.contact-v:hover { color: var(--accent-text); }
 
 @media (max-width: 1020px) {
     .work-grid { columns: 2; }
-    .doc-grid { grid-template-columns: repeat(2, 1fr); }
-    .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
-    .about-grid { grid-template-columns: minmax(240px, 320px) 1fr; }
+    .doc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .testimonial-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .about-grid { grid-template-columns: minmax(240px, 320px) minmax(0, 1fr); }
 }
 
 @media (max-width: 900px) {
@@ -1651,6 +1658,8 @@ a.contact-v:hover { color: var(--accent-text); }
         background: var(--paper);
         visibility: hidden;
         opacity: 0;
+        overflow-y: auto;
+        overscroll-behavior: contain;
         transition: opacity var(--t-med) var(--ease), visibility var(--t-med);
     }
     body.nav-open .main-nav { visibility: visible; opacity: 1; }
@@ -1680,7 +1689,7 @@ a.contact-v:hover { color: var(--accent-text); }
     .contact-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
     .about-portrait { position: static; max-width: 380px; }
-    .service-row { grid-template-columns: 3rem 1fr; gap: 1.1rem; }
+    .service-row { grid-template-columns: 3rem minmax(0, 1fr); gap: 1.1rem; }
     .service-arrow { display: none; }
     .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
     .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 1.6rem 0; }
@@ -1702,6 +1711,41 @@ a.contact-v:hover { color: var(--accent-text); }
     .footer-base { flex-direction: column; gap: 0.6rem; align-items: flex-start; }
     .modal { padding: 0; }
     .modal-panel { max-height: 100dvh; height: 100dvh; border-radius: 0; }
+}
+
+/* ============================================================
+   RESPONSIVE HARDENING — low-end phones & laptops
+   No visual change at normal widths; only protects against
+   overflow / scatter when content is wider than its track.
+   ============================================================ */
+
+/* Let long unbreakable strings (emails, phone numbers, URLs) wrap
+   instead of forcing horizontal overflow on narrow screens. */
+p, li, dd, a,
+.contact-v, .fact-v, .footer-tag, .timeline-org,
+.resume-meta, .doc-meta, .nav-cta, .hero-sub, .about-body p {
+    overflow-wrap: anywhere;
+}
+
+/* Touch devices: neutralise hover "lift" transforms so a tap doesn't
+   leave elements stuck in a translated/hovered state — the glitch
+   cheap phones show. Colour/background hovers are harmless, left on. */
+@media (hover: none) {
+    .work-card:hover img,
+    .doc-card:hover,
+    .testimonial-card:hover,
+    .skill-card:hover,
+    .resume-card:hover,
+    .hero-portrait:hover img,
+    .strip-track figure:hover img,
+    .service-row:hover .service-arrow {
+        transform: none;
+    }
+    .marquee:hover .marquee-track,
+    .studio-strip:hover .strip-track,
+    .studio-strip:focus-within .strip-track {
+        animation-play-state: running;
+    }
 }
 
 /* ---------- Reduced motion ---------- */
