@@ -15,6 +15,49 @@
     const MAILTO = 'charliejnr38@gmail.com';
     const BRAND = 'Orivon';
 
+    /* ============ Theme — Orivon Midnight / Ivory ============
+       Palette: official Orivon Brand Identity Sheet. */
+    const Theme = {
+        key: 'orivon-theme',
+        root: document.documentElement,
+        chrome: { midnight: '#071321', ivory: '#F7F2E8' },   // theme-color per mode
+        meta: null,
+        normalize(v) {
+            if (v === 'onyx') return 'midnight';   // legacy value
+            if (v === 'gallery') return 'ivory';   // legacy value
+            return this.chrome[v] ? v : 'midnight';
+        },
+        apply(theme) {
+            theme = this.normalize(theme);
+            this.root.setAttribute('data-theme', theme);
+            $$('img[data-light-src]').forEach(img => {
+                img.src = theme === 'midnight' ? img.dataset.darkSrc : img.dataset.lightSrc;
+            });
+            if (!this.meta) this.meta = document.querySelector('meta[name="theme-color"]');
+            if (this.meta) this.meta.setAttribute('content', this.chrome[theme]);
+            const btn = $('#themeToggle');
+            if (btn) {
+                btn.setAttribute('aria-label', theme === 'midnight' ? 'Switch to light theme (Ivory)' : 'Switch to dark theme (Midnight)');
+                btn.setAttribute('aria-pressed', String(theme === 'ivory'));
+            }
+            try { localStorage.setItem(this.key, theme); } catch (e) { /* private mode */ }
+        },
+        init() {
+            let theme = 'midnight';
+            try { theme = localStorage.getItem(this.key) || 'midnight'; } catch (e) { /* ignore */ }
+            this.apply(theme);
+            const btn = $('#themeToggle');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const next = this.normalize(this.root.getAttribute('data-theme')) === 'midnight' ? 'ivory' : 'midnight';
+                    this.root.classList.add('theming');
+                    this.apply(next);
+                    window.setTimeout(() => this.root.classList.remove('theming'), 420);
+                });
+            }
+        }
+    };
+
     /* ============ Header ============ */
     const header = $('#siteHeader');
     const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
@@ -372,7 +415,61 @@
     const yearEl = $('#year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+    /* ============ Scrollspy — mark the active section in the nav ============ */
+    (function scrollSpy() {
+        const links = $$('#mainNav a[href^="#"]:not(.nav-cta)');
+        const targets = links
+            .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+            .filter(Boolean);
+        if (!links.length || !('IntersectionObserver' in window)) return;
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(en => {
+                if (!en.isIntersecting) return;
+                links.forEach(a => a.classList.toggle(
+                    'is-active',
+                    a.getAttribute('href') === '#' + en.target.id
+                ));
+            });
+        }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+        targets.forEach(t => spy.observe(t));
+    })();
+
+    /* ============ Back-to-top FAB ============ */
+    const fab = $('#toTopFab');
+    if (fab) {
+        const onFabScroll = () => fab.classList.toggle('is-visible', window.scrollY > 640);
+        window.addEventListener('scroll', onFabScroll, { passive: true });
+        onFabScroll();
+        fab.addEventListener('click', () => {
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+        });
+    }
+
+    /* ============ Graceful image fallbacks ============
+       Portraits live in assets/portraits/. Until they are moved there on
+       GitHub, the About portrait falls back to profile.png and the studio
+       strip simply stays hidden — the layout never breaks. */
+    $$('img[data-fallback]').forEach(img => {
+        img.addEventListener('error', () => {
+            if (img.dataset.fallbackUsed) return;
+            img.dataset.fallbackUsed = '1';
+            img.src = img.dataset.fallback;
+        }, { once: true });
+    });
+    const strip = $('.studio-strip');
+    if (strip) {
+        $$('.strip-track img', strip).forEach(img => {
+            img.addEventListener('error', () => {
+                const fig = img.closest('figure');
+                if (fig) fig.hidden = true;
+                if (!$$('figure:not([hidden])', strip).length) strip.hidden = true;
+            });
+        });
+    }
+
     /* ============ Init ============ */
+    Theme.init();
     renderWork();
     renderDocs('word');
     renderTestimonials();

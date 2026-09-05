@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="midnight">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <meta name="description" content="Orivon — the studio of Elijah Charles Sunday, Creative Lead. Brand identity, art direction, campaign design, pitch decks, Excel dashboards and professional documents. Based in Akwa Ibom, Nigeria — working worldwide.">
     <meta name="keywords" content="orivon, brand identity, art direction, campaign design, graphic designer nigeria, presentation designer, excel dashboard, elijah sunday">
     <meta name="author" content="Elijah Charles Sunday — Orivon">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#071321">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -37,14 +37,17 @@
     <header class="site-header" id="siteHeader">
         <div class="wrap header-inner">
             <a class="brand" href="#top" aria-label="Orivon — home">
-                <img class="brand-mark" src="assets/brand/mark.png" alt="" aria-hidden="true">
-                <img class="brand-wordmark" src="assets/brand/wordmark.png" alt="ORIVON">
+                <img class="brand-mark" src="assets/brand/mark-light.png" alt="" aria-hidden="true"
+                     data-light-src="assets/brand/mark.png" data-dark-src="assets/brand/mark-light.png">
+                <img class="brand-wordmark" src="assets/brand/wordmark-light.png" alt="ORIVON"
+                     data-light-src="assets/brand/wordmark.png" data-dark-src="assets/brand/wordmark-light.png">
             </a>
 
             <nav class="main-nav" id="mainNav" aria-label="Primary">
                 <a href="#work">Work</a>
                 <a href="#documents">Documents</a>
                 <a href="#services">Services</a>
+                <a href="#skills">Skills</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
                 <a class="nav-cta" href="mailto:charliejnr38@gmail.com">charliejnr38@gmail.com</a>
@@ -54,6 +57,10 @@
                 <span class="availability" title="Currently accepting new projects">
                     <span class="availability-dot" aria-hidden="true"></span>Available for work
                 </span>
+                <button class="theme-toggle" id="themeToggle" aria-label="Switch to light theme" title="Toggle theme">
+                    <svg class="icon-sun" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M8 1.2v1.6M8 13.2v1.6M1.2 8h1.6M13.2 8h1.6M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M12.8 3.2l-1.1 1.1M4.3 11.7l-1.1 1.1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    <svg class="icon-moon" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.2 9.6A5.6 5.6 0 0 1 6.4 2.8a5.6 5.6 0 1 0 6.8 6.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </button>
                 <a class="btn btn-accent btn-sm" href="#contact">Let&rsquo;s talk</a>
                 <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
                     <span></span><span></span>
@@ -66,23 +73,38 @@
         <!-- ============ HERO ============ -->
         <section class="hero">
             <div class="wrap hero-inner">
-                <p class="kicker reveal">Orivon — Brand Identity · Art Direction · Campaign Design</p>
-                <h1 class="hero-title reveal" style="--d:.06s">Elijah Sunday</h1>
-                <p class="hero-role serif reveal" style="--d:.1s">Creative Lead at Orivon</p>
-                <p class="hero-sub reveal" style="--d:.14s">
-                    For brands that intend to lead their category — from first mark to full campaign.
-                    Akwa Ibom, Nigeria&nbsp;· working with clients everywhere.
-                </p>
-                <div class="hero-cta reveal" style="--d:.18s">
-                    <a class="btn btn-accent" href="#work">
-                        View selected work
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                    <a class="btn btn-ghost" href="mailto:charliejnr38@gmail.com?subject=New%20project%20—%20Orivon">
-                        Partner with Orivon
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13 13 3M5.5 3H13v7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                <div class="hero-copy">
+                    <p class="kicker reveal">Orivon — Brand Identity · Art Direction · Campaign Design</p>
+                    <h1 class="hero-title reveal" style="--d:.06s">Elijah Sunday</h1>
+                    <p class="hero-role serif reveal" style="--d:.1s">Creative Lead at Orivon</p>
+                    <p class="hero-sub reveal" style="--d:.14s">
+                        For brands that intend to lead their category — from first mark to full campaign.
+                        Akwa Ibom, Nigeria&nbsp;· working with clients everywhere.
+                    </p>
+                    <div class="hero-cta reveal" style="--d:.18s">
+                        <a class="btn btn-accent" href="#work">
+                            View selected work
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a class="btn btn-ghost" href="mailto:charliejnr38@gmail.com?subject=New%20project%20—%20Orivon">
+                            Partner with Orivon
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13 13 3M5.5 3H13v7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a class="btn btn-ghost" href="assets/documents/Sunday_Elijah_Charles_CV.pdf" download>
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0 3.5-3.5M8 10 4.5 6.5M2.5 13.5h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Download CV
+                        </a>
+                    </div>
+                    <ul class="hero-socials reveal" style="--d:.22s">
+                        <li><a href="https://github.com/Charliejnr-21" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://instagram.com/charliejnr38" target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="https://wa.me/2349025360769" target="_blank" rel="noopener">WhatsApp</a></li>
+                        <li><a href="mailto:charliejnr38@gmail.com">Email</a></li>
+                    </ul>
                 </div>
+                <figure class="hero-portrait reveal" style="--d:.12s">
+                    <img src="assets/images/profile.png" alt="Portrait of Elijah Sunday — Creative Lead, Orivon" decoding="async" fetchpriority="high">
+                </figure>
             </div>
         </section>
 
@@ -223,11 +245,52 @@
             </div>
         </section>
 
-        <!-- ============ 04 · ABOUT ============ -->
+        <!-- ============ 04 · SKILLS ============ -->
+        <section class="section section-warm skills" id="skills">
+            <div class="wrap">
+                <header class="section-head reveal">
+                    <p class="section-label"><span>04</span> Capabilities</p>
+                    <h2>The <em class="serif">toolkit</em></h2>
+                    <p class="section-desc">A dual discipline — analytical precision meets visual storytelling,
+                    refined across five years of client work.</p>
+                </header>
+                <div class="skills-grid">
+                    <div class="skill-card reveal">
+                        <h3>Design &amp; Creative</h3>
+                        <ul class="tag-list tag-list-lg">
+                            <li>Adobe Photoshop</li><li>CorelDRAW</li><li>Adobe Lightroom</li>
+                            <li>Logo &amp; Brand Identity</li><li>Typography &amp; Layout</li><li>Photo Retouching</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card reveal" style="--d:.06s">
+                        <h3>Microsoft Office</h3>
+                        <ul class="tag-list tag-list-lg">
+                            <li>Excel Dashboards</li><li>Advanced Formulas</li><li>VBA &amp; Automation</li>
+                            <li>Word Documents</li><li>PowerPoint Decks</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card reveal" style="--d:.12s">
+                        <h3>Data &amp; Web</h3>
+                        <ul class="tag-list tag-list-lg">
+                            <li>Data Analysis</li><li>Reporting Systems</li><li>HTML</li><li>CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card reveal" style="--d:.18s">
+                        <h3>Professional Practice</h3>
+                        <ul class="tag-list tag-list-lg">
+                            <li>Brand Strategy</li><li>Client Management</li>
+                            <li>Training &amp; Documentation</li><li>Virtual Assistance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 05 · ABOUT ============ -->
         <section class="section section-warm about" id="about">
             <div class="wrap">
                 <header class="section-head reveal">
-                    <p class="section-label"><span>04</span> About</p>
+                    <p class="section-label"><span>05</span> About</p>
                     <h2>Design &amp; precision, <em class="serif">combined</em></h2>
                 </header>
 
@@ -240,7 +303,7 @@
 
                 <div class="about-grid">
                     <figure class="about-portrait reveal">
-                        <img src="assets/images/profile.png" alt="Portrait of Elijah Sunday" loading="lazy">
+                        <img src="assets/portraits/elijah-02.png" alt="Portrait of Elijah Sunday" loading="lazy" decoding="async" data-fallback="assets/images/profile.png">
                         <figcaption>Elijah Sunday — Creative Lead, Orivon · Eket, Nigeria</figcaption>
                     </figure>
 
@@ -260,7 +323,8 @@
                         </div>
 
                         <blockquote class="philosophy reveal" style="--d:.08s">
-                            <img class="philosophy-mark" src="assets/brand/mark.png" alt="" aria-hidden="true">
+                            <img class="philosophy-mark" src="assets/brand/mark-light.png" alt="" aria-hidden="true" loading="lazy" decoding="async"
+                         data-light-src="assets/brand/mark.png" data-dark-src="assets/brand/mark-light.png">
                             <p>From vision — <em>Or&iacute;</em>. Every brand, every dataset and every presentation
                             holds potential waiting to be unlocked. We don&rsquo;t just design — we elevate.
                             We don&rsquo;t just format — we transform.</p>
@@ -284,7 +348,32 @@
                     </div>
                 </div>
 
-                <!-- Experience -->
+            <!-- Studio strip — the creative lead, in person -->
+            <div class="studio-strip reveal">
+                <p class="mono-label">Behind the work — the creative lead, in person</p>
+                <div class="strip-viewport">
+                    <div class="strip-track">
+            <figure><img src="assets/portraits/elijah-01.png" alt="Elijah Sunday — behind the work" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/portraits/elijah-03.png" alt="Elijah Sunday — behind the work" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/portraits/elijah-04.png" alt="Elijah Sunday — behind the work" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/portraits/elijah-05.png" alt="Elijah Sunday — behind the work" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/portraits/elijah-06.png" alt="Elijah Sunday — behind the work" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/portraits/elijah-07.png" alt="Elijah Sunday — behind the work" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/portraits/elijah-08.png" alt="Elijah Sunday — behind the work" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/portraits/elijah-09.png" alt="Elijah Sunday — behind the work" loading="lazy" decoding="async"></figure>
+            <figure aria-hidden="true"><img src="assets/portraits/elijah-01.png" alt="" loading="lazy" decoding="async"></figure>
+            <figure aria-hidden="true"><img src="assets/portraits/elijah-03.png" alt="" loading="lazy" decoding="async"></figure>
+            <figure aria-hidden="true"><img src="assets/portraits/elijah-04.png" alt="" loading="lazy" decoding="async"></figure>
+            <figure aria-hidden="true"><img src="assets/portraits/elijah-05.png" alt="" loading="lazy" decoding="async"></figure>
+            <figure aria-hidden="true"><img src="assets/portraits/elijah-06.png" alt="" loading="lazy" decoding="async"></figure>
+            <figure aria-hidden="true"><img src="assets/portraits/elijah-07.png" alt="" loading="lazy" decoding="async"></figure>
+            <figure aria-hidden="true"><img src="assets/portraits/elijah-08.png" alt="" loading="lazy" decoding="async"></figure>
+            <figure aria-hidden="true"><img src="assets/portraits/elijah-09.png" alt="" loading="lazy" decoding="async"></figure>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience -->
                 <div class="about-experience">
                     <p class="mono-label reveal">Experience</p>
                     <ol class="timeline">
@@ -399,7 +488,7 @@
         <section class="section testimonials" id="testimonials">
             <div class="wrap">
                 <header class="section-head reveal">
-                    <p class="section-label"><span>05</span> Kind Words</p>
+                    <p class="section-label"><span>06</span> Kind Words</p>
                     <h2>What clients <em class="serif">say</em></h2>
                 </header>
                 <div class="testimonial-grid" id="testimonialGrid"></div>
@@ -410,7 +499,7 @@
         <section class="section contact" id="contact">
             <div class="wrap">
                 <header class="section-head reveal">
-                    <p class="section-label"><span>06</span> Contact</p>
+                    <p class="section-label"><span>07</span> Contact</p>
                     <h2 class="contact-title">Have a project in mind?<br><em class="serif">Let&rsquo;s make it unforgettable.</em></h2>
                 </header>
 
@@ -437,6 +526,7 @@
                                 <span class="contact-v contact-socials">
                                     <a href="https://github.com/Charliejnr-21" target="_blank" rel="noopener">GitHub</a>
                                     <a href="https://instagram.com/charliejnr38" target="_blank" rel="noopener">Instagram</a>
+                                    <a href="https://wa.me/2349025360769" target="_blank" rel="noopener">WhatsApp</a>
                                 </span>
                             </li>
                         </ul>
@@ -490,9 +580,11 @@
     <footer class="site-footer">
         <div class="wrap footer-inner">
             <div class="footer-brand">
-                <img class="footer-mark" src="assets/brand/mark.png" alt="" aria-hidden="true">
+                <img class="footer-mark" src="assets/brand/mark-light.png" alt="" aria-hidden="true" loading="lazy" decoding="async"
+                     data-light-src="assets/brand/mark.png" data-dark-src="assets/brand/mark-light.png">
                 <div>
-                    <img class="footer-wordmark" src="assets/brand/wordmark.png" alt="Orivon">
+                    <img class="footer-wordmark" src="assets/brand/wordmark-light.png" alt="Orivon"
+                     data-light-src="assets/brand/wordmark.png" data-dark-src="assets/brand/wordmark-light.png">
                     <p class="footer-tag">From vision. Built by Elijah Charles Sunday — Creative Lead.</p>
                 </div>
             </div>
@@ -500,6 +592,7 @@
                 <a href="#work">Work</a>
                 <a href="#documents">Documents</a>
                 <a href="#services">Services</a>
+                <a href="#skills">Skills</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -513,6 +606,10 @@
             <a href="#top" class="to-top">Back to top <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 14V3m0 0L3.5 7.5M8 3l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
     </footer>
+
+    <button class="to-top-fab" id="toTopFab" aria-label="Back to top">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 14V3m0 0L3.5 7.5M8 3l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
 
     <!-- ============ CASE STUDY MODAL ============ -->
     <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>

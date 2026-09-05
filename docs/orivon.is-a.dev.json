@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/is-a-dev/register/main/domain-schema.json",
+  "owner": {
+    "username": "Charliejnr-21",
+    "email": "charliejnr38@gmail.com"
+  },
+  "record": {
+    "CNAME": "charliejnr-21.github.io"
+  }
+}
