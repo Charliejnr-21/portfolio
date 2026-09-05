@@ -1764,6 +1764,37 @@ p, li, dd, a, button,
 .resume-card,
 .skill-card { max-width: 100%; }
 
+/* Smaller mobile tier (<=480px: 414 / 430 and everything in between).
+   Refines spacing + typography for large phones; tablet/desktop untouched. */
+@media (max-width: 480px) {
+    :root { --gutter: 1.1rem; }
+
+    .section { padding: clamp(3.25rem, 9vw, 5rem) 0; }
+    .section.work { padding-top: clamp(2.75rem, 8vw, 4.5rem); }
+    .hero { padding: clamp(3.25rem, 8vw, 5rem) 0 clamp(1.5rem, 4vw, 2.5rem); }
+    .section-head { margin-bottom: clamp(2rem, 8vw, 3rem); }
+
+    .hero-title { font-size: clamp(2.4rem, 7.5vw, 3.4rem); }
+    .hero-role { font-size: clamp(1.45rem, 5vw, 2.1rem); }
+    .contact-title { font-size: clamp(2.2rem, 8vw, 3.4rem) !important; }
+
+    .btn {
+        white-space: normal;       /* wrap instead of overflowing */
+        max-width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 0.8rem 1.45rem;
+    }
+    .btn svg { flex-shrink: 0; }
+    .hero-cta { gap: 0.75rem; }
+
+    .about-portrait { margin-inline: auto; }   /* centre the portrait on phones */
+    .resume-grid { grid-template-columns: 1fr; }
+    .testimonial-card { padding: clamp(1.5rem, 5vw, 1.9rem); }
+    .doc-preview { padding: clamp(1.4rem, 5vw, 1.9rem); }
+    .footer-tag { font-size: 0.78rem; }
+}
+
 /* Ultra-narrow phones (<=400px: 320 / 360 / 390 common sizes).
    Allow buttons to wrap, ease the type scale and tighten gutters so
    content always fits inside the background with zero spill. */
